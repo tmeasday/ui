@@ -12,14 +12,14 @@ import {
 	HTTPError,
 	status,
 	json,
-} from '../../src/middlewares/http/middleware';
-import http from '../../src/redux/middlewares/http';
+} from '../../../src/redux/middlewares/http/middleware';
+import http from '../../../src/redux/middlewares/http';
 import {
 	HTTP_METHODS,
 	HTTP_REQUEST,
 	HTTP_RESPONSE,
 	HTTP_ERRORS,
-} from '../../src/redux/middlewares/http/constants';
+} from '../../../src/redux/middlewares/http/constants';
 
 describe('CMF http middleware', () => {
 	it('should be available from middlewares/http', () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Dispatcher, checkIfActionInfoExist } from '../../src/components/Dispatcher';
 
-jest.mock('../src/api', () => ({
+jest.mock('../../src/core/api', () => ({
 	action: {
 		getActionInfo(context, id) {
 			if (id !== 'existingActionCreator:id'

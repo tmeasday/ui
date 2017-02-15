@@ -1,5 +1,5 @@
 /* eslint no-underscore-dangle: ["error", {"allow": ["_registry", "_isLocked"] }] */
-import registry from '../../src/core/api/registry';
+import registry from '../../../src/core/api/registry';
 
 describe('CMF registry', () => {
 	it('Registry should get a singleton', () => {

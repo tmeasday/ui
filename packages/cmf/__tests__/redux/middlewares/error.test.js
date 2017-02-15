@@ -1,9 +1,9 @@
 import getErrorMiddleware, {
 	URL_REQUIRED_MESSAGE,
-} from '../../src/middlewares/error';
+} from '../../../src/redux/middlewares/error';
 import {
 	HTTP_METHODS,
-} from '../../src/middlewares/http/constants';
+} from '../../../src/redux/middlewares/http/constants';
 
 describe('CMF error middleware getErrorMiddleware', () => {
 	it('should return a middleware using slug', () => {

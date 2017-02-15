@@ -1,6 +1,6 @@
 import { Map, List, fromJS } from 'immutable';
 
-import collectionsReducers, { defaultState } from '../../src/reducers/collectionsReducers';
+import collectionsReducers, { defaultState } from '../../../src/redux/reducers/collectionsReducers';
 
 describe('check collection management reducer', () => {
 	const initialState = defaultState.set('collection1', 'super data');

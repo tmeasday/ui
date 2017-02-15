@@ -4,7 +4,7 @@ import componentsReducers, {
 	defaultState,
 	componentAlreadyExists,
 	componentDoesntExists,
-} from '../../src/reducers/componentsReducers';
+} from '../../../src/redux/reducers/componentsReducers';
 
 describe('check component management reducer', () => {
 	const initialState = defaultState

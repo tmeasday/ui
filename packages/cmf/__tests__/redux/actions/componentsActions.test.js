@@ -2,7 +2,7 @@ import {
 	addComponentState,
 	mergeComponentState,
 	removeComponentState,
-} from '../../src/actions/componentsActions';
+} from '../../../src/redux/actions/componentsActions';
 
 describe('test component state management action creators', () => {
 	it('addComponentState dispatch well formed action object', () => {

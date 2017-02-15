@@ -1,4 +1,4 @@
-import api from '../src/api/api';
+import api from '../../../src/core/api';
 
 describe('CMF api', () => {
 	it('provide action, route access', () => {

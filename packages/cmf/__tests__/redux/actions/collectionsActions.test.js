@@ -6,7 +6,7 @@ import {
 	addOrReplaceCollection,
 	removeCollection,
 	mutateCollection,
-} from '../../src/actions/collectionsActions';
+} from '../../../src/redux/actions/collectionsActions';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);

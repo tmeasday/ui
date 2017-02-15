@@ -1,5 +1,5 @@
-import * as actions from '../../src/actions/settingsActions';
-import reducer, { defaultState } from '../../src/reducers/settingsReducers';
+import * as actions from '../../../src/redux/actions/settingsActions';
+import reducer, { defaultState } from '../../../src/redux/reducers/settingsReducers';
 
 describe('CMF settinsReducers', () => {
 	it('should expose defaultState', () => {

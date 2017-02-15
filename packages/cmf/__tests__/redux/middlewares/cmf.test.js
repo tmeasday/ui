@@ -1,5 +1,5 @@
-import cmfMiddleware from '../../src/middlewares/cmf';
-import { COLLECTION_ADD_OR_REPLACE } from '../../src/actions/collectionsActions';
+import cmfMiddleware from '../../../src/redux/middlewares/cmf';
+import { COLLECTION_ADD_OR_REPLACE } from '../../../src/redux/actions/collectionsActions';
 
 describe('CMF middleware', () => {
 	let store;

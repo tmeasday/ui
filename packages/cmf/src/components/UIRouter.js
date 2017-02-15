@@ -5,7 +5,7 @@ import React from 'react';
 import { Router as BaseRouter } from 'react-router';
 import { connect } from 'react-redux';
 
-import api from './api/api';
+import api from '../core/api';
 
 /**
  * pure arrow function that render the router component.

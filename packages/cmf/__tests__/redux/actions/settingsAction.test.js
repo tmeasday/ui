@@ -1,4 +1,4 @@
-import * as settings from '../../src/actions/settingsActions';
+import * as settings from '../../../src/redux/actions/settingsActions';
 
 describe('CMF settinsActions', () => {
 	it('should expose some CONSTANT', () => {

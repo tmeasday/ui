@@ -3,9 +3,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import route, {
 	mapStateToViewProps,
-} from '../../src/core/api/route';
-import registry from '../../src/core/api/registry';
-import mock from '../src/mock';
+} from '../../../src/core/api/route';
+import registry from '../../../src/core/api/registry';
+import mock from '../../../src/mock';
 
 describe('CMF route', () => {
 	it('registerComponent', () => {

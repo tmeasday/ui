@@ -1,5 +1,5 @@
-import http from '../../src/actions/http';
-import { HTTP_METHODS } from '../../src/middlewares/http/constants';
+import http from '../../../src/redux/actions/http';
+import { HTTP_METHODS } from '../../../src/redux/middlewares/http/constants';
 
 describe('actions.http', () => {
 	let url;

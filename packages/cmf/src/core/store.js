@@ -8,9 +8,9 @@ import { enableBatching } from 'redux-batched-actions';
 import thunk from 'redux-thunk';
 import invariant from 'invariant';
 
-import cmfReducers from './reducers';
-import httpMiddleware from './middlewares/http';
-import cmfMiddleware from './middlewares/cmf';
+import cmfReducers from '../redux/reducers';
+import httpMiddleware from '../redux/middlewares/http';
+import cmfMiddleware from '../redux/middlewares/cmf';
 
 const preReducers = [];
 const enhancers = [];
