@@ -1,4 +1,4 @@
-import actionAPI from '../src/action';
+import actionAPI from '../../src/core/api/action';
 import mock from '../src/mock';
 
 describe('CMF action', () => {

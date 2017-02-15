@@ -1,5 +1,5 @@
 /**
- * this module define a high level API to handle common tasks
+ * This module define a high level API to handle common tasks
  * {action,router,registry}
  * @module react-cmf/lib/api
  * @see module:react-cmf/lib/registry

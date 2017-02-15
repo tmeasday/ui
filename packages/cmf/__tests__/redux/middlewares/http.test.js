@@ -13,13 +13,13 @@ import {
 	status,
 	json,
 } from '../../src/middlewares/http/middleware';
-import http from '../../src/middlewares/http';
+import http from '../../src/redux/middlewares/http';
 import {
 	HTTP_METHODS,
 	HTTP_REQUEST,
 	HTTP_RESPONSE,
 	HTTP_ERRORS,
-} from '../../src/middlewares/http/constants';
+} from '../../src/redux/middlewares/http/constants';
 
 describe('CMF http middleware', () => {
 	it('should be available from middlewares/http', () => {

@@ -5,7 +5,7 @@
  */
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import api from './api';
+import api from './core/api/api';
 
 /**
  * check if on[event] string relate to a declared action handler

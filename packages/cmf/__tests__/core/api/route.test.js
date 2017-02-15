@@ -3,8 +3,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import route, {
 	mapStateToViewProps,
-} from '../src/route';
-import registry from '../src/registry';
+} from '../../src/core/api/route';
+import registry from '../../src/core/api/registry';
 import mock from '../src/mock';
 
 describe('CMF route', () => {

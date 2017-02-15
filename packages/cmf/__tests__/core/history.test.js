@@ -1,5 +1,5 @@
 import { hashHistory } from 'react-router';
-import history from '../src/history';
+import history from '../src/core/history';
 
 jest.mock('react-router');
 jest.mock('react-router-redux', () => ({
