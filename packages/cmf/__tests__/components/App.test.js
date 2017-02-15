@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Provider } from 'react-redux';
 
-import App from '../src/components/App';
-import RegistryProvider from '../src/components/RegistryProvider';
-import UIRouter from '../src/components/UIRouter';
+import App from '../../src/components/App';
+import RegistryProvider from '../../src/components/RegistryProvider';
+import UIRouter from '../../src/components/UIRouter';
 
 describe('CMF App', () => {
 	it('App should init stuff', () => {

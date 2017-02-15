@@ -4,7 +4,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import history from './history';
+import history from '../core/history';
 import RegistryProvider from './RegistryProvider';
 import UIRouter from './UIRouter';
 

@@ -1,4 +1,4 @@
-import store from '../src/core/store';
+import store from '../../src/core/store';
 
 describe('CMF store', () => {
 	it('shoud expose a function', () => {

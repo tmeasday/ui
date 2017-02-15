@@ -2,7 +2,7 @@
  * @module react-cmf/lib/RegistryProvider
  */
 import React from 'react';
-import Registry from './registry';
+import Registry from '../core/api/registry';
 
 /**
  * The provider is a JSX wrapper to inject the registry as a context var

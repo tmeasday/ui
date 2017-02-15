@@ -2,16 +2,16 @@
  * @module react-cmf
  */
 
-import api from './api';
-import App from './App';
-import ConnectedDispatcher from './Dispatcher';
-import RegistryProvider from './RegistryProvider';
-import UIRouter from './UIRouter';
-import history from './history';
-import store from './store';
-import actions from './actions/';
-import reducers from './reducers/';
-import getErrorMiddleware from './middlewares/error';
+import App from './components/App';
+import ConnectedDispatcher from './components/Dispatcher';
+import RegistryProvider from './components/RegistryProvider';
+import UIRouter from './components/UIRouter';
+import api from './core/api';
+import history from './core/history';
+import store from './core/store';
+import actions from './redux/actions/';
+import reducers from './redux/reducers/';
+import getErrorMiddleware from './redux/middlewares/error';
 
 const Dispatcher = ConnectedDispatcher;
 

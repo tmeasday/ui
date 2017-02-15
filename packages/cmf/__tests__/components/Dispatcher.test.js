@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { Dispatcher, checkIfActionInfoExist } from '../src/components/Dispatcher';
+import { Dispatcher, checkIfActionInfoExist } from '../../src/components/Dispatcher';
 
 jest.mock('../src/api', () => ({
 	action: {
