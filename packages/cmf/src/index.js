@@ -8,7 +8,7 @@ import RegistryProvider from './components/RegistryProvider';
 import UIRouter from './components/UIRouter';
 import api from './core/api';
 import history from './core/history';
-import store from './core/store';
+import store from './redux/store';
 import actions from './redux/actions/';
 import reducers from './redux/reducers/';
 import getErrorMiddleware from './redux/middlewares/error';
