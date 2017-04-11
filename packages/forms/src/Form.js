@@ -63,6 +63,7 @@ class Form extends React.Component {
 
 	constructor(props) {
 		super(props);
+		this.state = { formData: this.props.data && this.props.data.properties };
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSchemaChange = this.handleSchemaChange.bind(this);
 		this.handleSchemaSubmit = this.handleSchemaSubmit.bind(this);
@@ -104,6 +105,8 @@ class Form extends React.Component {
 	 * Handle changes of form @see https://github.com/mozilla-services/react-jsonschema-form
 	 */
 	handleChange(...args) {
+		const { formData } = args[0];
+		this.setState({ formData });
 		if (this.props.onChange) {
 			this.props.onChange(...args);
 		}
@@ -132,6 +135,9 @@ class Form extends React.Component {
 		const customFormContext = {
 			handleSchemaChange: this.handleSchemaChange,
 			handleAction: this.props.handleAction,
+			formData: this.state.formData,
+			schema,
+
 		};
 
 		return (
