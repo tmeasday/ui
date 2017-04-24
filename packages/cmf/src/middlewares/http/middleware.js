@@ -161,6 +161,8 @@ export const httpMiddleware = ({ dispatch }) => next => (action) => {
 			const newAction = Object.assign({}, action);
 			dispatch(httpResponse(response));
 			if (newAction.transform) {
+				const msg = 'DEPRECATED: do not use transform. This will be removed in futur release';
+				console.warn(msg);  // eslint-disable-line no-console
 				newAction.response = newAction.transform(response);
 			} else {
 				newAction.response = response;
