@@ -21,7 +21,7 @@ function exe(command, cb) {
 }
 
 function addAndCommit() {
-	exe('git add . && git commit --amend --no-edit');
+	exe(`git add . && git commit --amend --no-edit && git tag -fa v${lernaConf.version}`);
 }
 
 fs.readFile(POM_PATH, POM_ENCODING, (readErr, data) => {
