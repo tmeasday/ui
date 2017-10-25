@@ -18,7 +18,7 @@ function getRowRenderer(type) {
 		const rowRendererTypes = [TABLE].concat(Object.keys(rowDictionary));
 		throw new Error(
 			`Unknown row renderer in Virtualized List : ${type}. ` +
-			`Possible values are [${rowRendererTypes}].`
+				`Possible values are [${rowRendererTypes}].`,
 		);
 	}
 	return rowRenderer;
@@ -36,6 +36,7 @@ function RendererSelector(props) {
 		isSelected,
 		isActive,
 		onRowClick,
+		onRowDoubleClick,
 		rowHeight,
 		selectionToggle,
 		sort,
@@ -54,6 +55,7 @@ function RendererSelector(props) {
 				isActive={isActive}
 				isSelected={isSelected}
 				onRowClick={onRowClick}
+				onRowDoubleClick={onRowDoubleClick}
 				selectionToggle={selectionToggle}
 				sort={sort}
 				sortBy={sortBy}
@@ -72,6 +74,7 @@ function RendererSelector(props) {
 			isActive={isActive}
 			isSelected={isSelected}
 			onRowClick={onRowClick}
+			onRowDoubleClick={onRowDoubleClick}
 			rowHeight={rowHeight}
 			rowRenderer={getRowRenderer(type)}
 			selectionToggle={selectionToggle}

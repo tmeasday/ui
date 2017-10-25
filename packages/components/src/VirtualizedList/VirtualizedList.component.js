@@ -19,6 +19,7 @@ function VirtualizedList(props) {
 		isSelected,
 		inProgress,
 		onRowClick,
+		onRowDoubleClick,
 		rowHeight,
 		selectionToggle,
 		sort,
@@ -35,11 +36,7 @@ function VirtualizedList(props) {
 
 	if (inProgress) {
 		return (
-			<div
-				aria-atomic="true"
-				aria-busy="true"
-				className={theme['tc-list-progress']}
-			>
+			<div aria-atomic="true" aria-busy="true" className={theme['tc-list-progress']}>
 				<CircularProgress size={'default'} />
 			</div>
 		);
@@ -54,6 +51,7 @@ function VirtualizedList(props) {
 					isActive={isActive}
 					isSelected={isSelected}
 					onRowClick={onRowClick}
+					onRowDoubleClick={onRowDoubleClick}
 					rowHeight={rowHeight}
 					selectionToggle={selectionToggle}
 					sort={sort}

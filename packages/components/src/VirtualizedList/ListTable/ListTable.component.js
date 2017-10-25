@@ -24,6 +24,7 @@ function ListTable(props) {
 		isActive,
 		isSelected,
 		onRowClick,
+		onRowDoubleClick,
 		sort,
 		sortBy,
 		sortDirection,
@@ -32,19 +33,23 @@ function ListTable(props) {
 
 	let RowTableRenderer = DefaultTableRowRenderer;
 	if (isActive || isSelected) {
-		RowTableRenderer = RowSelectionRenderer( // eslint-disable-line new-cap
-			DefaultTableRowRenderer,
-			{
-				isSelected,
-				isActive,
-				getRowData: rowProps => rowProps.rowData,
-			}
-		);
+		// eslint-disable-next-line new-cap
+		RowTableRenderer = RowSelectionRenderer(DefaultTableRowRenderer, {
+			isSelected,
+			isActive,
+			getRowData: rowProps => rowProps.rowData,
+		});
 	}
 
 	let onRowClickCallback;
+	let onRowDoubleClickCallback;
+
 	if (onRowClick) {
 		onRowClickCallback = ({ event, rowData }) => onRowClick(event, rowData);
+	}
+
+	if (onRowDoubleClick) {
+		onRowDoubleClickCallback = ({ event, rowData }) => onRowDoubleClick(event, rowData);
 	}
 
 	return (
@@ -54,6 +59,7 @@ function ListTable(props) {
 			headerHeight={35}
 			height={height}
 			id={id}
+			onRowDoubleClick={onRowDoubleClickCallback}
 			onRowClick={onRowClickCallback}
 			noRowsRenderer={NoRows}
 			rowClassName={classNames(rowThemes)}
@@ -79,6 +85,7 @@ ListTable.propTypes = {
 	isActive: PropTypes.func,
 	isSelected: PropTypes.func,
 	onRowClick: PropTypes.func,
+	onRowDoubleClick: PropTypes.func,
 	sort: PropTypes.func,
 	sortBy: PropTypes.string,
 	sortDirection: PropTypes.string,

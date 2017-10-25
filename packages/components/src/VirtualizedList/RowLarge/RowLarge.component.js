@@ -1,13 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import {
-	extractSpecialFields,
-	getId,
-	getLabel,
-	getRowData,
-	renderCell,
-} from '../utils/gridrow';
+import { extractSpecialFields, getId, getLabel, getRowData, renderCell } from '../utils/gridrow';
 
 import rowThemes from './RowThemes';
 import theme from './RowLarge.scss';
@@ -28,8 +22,10 @@ function RowLarge({ className, index, key, parent, style }) {
 		const label = getLabel(field);
 		return (
 			<li key={fieldIndex}>
-				{label && (<span className={theme['field-label']}>{label}: </span>)}
-				<span className={theme['field-value']} title={tooltip}>{cellContent}</span>
+				{label && <span className={theme['field-label']}>{label}: </span>}
+				<span className={theme['field-value']} title={tooltip}>
+					{cellContent}
+				</span>
 			</li>
 		);
 	});
@@ -38,25 +34,26 @@ function RowLarge({ className, index, key, parent, style }) {
 		onRowClick = event => parent.props.onRowClick(event, getRowData(parent, index));
 	}
 
+	let onRowDoubleClick;
+	if (parent.props.onRowDoubleClick) {
+		onRowDoubleClick = event => parent.props.onRowDoubleClick(event, getRowData(parent, index));
+	}
+
 	return (
 		<div
 			className={classNames(rowThemes)}
 			key={key}
 			role="button"
 			onClick={onRowClick}
+			onDoubleClick={onRowDoubleClick}
 			style={style}
 		>
-			<div
-				className={`tc-list-large-row ${theme['inner-box']} ${className}`}
-				id={id}
-			>
+			<div className={`tc-list-large-row ${theme['inner-box']} ${className}`} id={id}>
 				<div className={theme.header}>
 					{titleCell}
 					{selectionCell}
 				</div>
-				<ul className={theme.content}>
-					{otherCellsListItems}
-				</ul>
+				<ul className={theme.content}>{otherCellsListItems}</ul>
 			</div>
 		</div>
 	);

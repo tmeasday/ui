@@ -10,25 +10,11 @@ describe('ListGrid', () => {
 	it('should render react-virtualized table', () => {
 		// when
 		const wrapper = shallow(
-			<ListTable
-				collection={collection}
-				height={600}
-				id={'my-list'}
-				width={1024}
-			>
-				<VirtualizedList.Content
-					label="Id"
-					dataKey="id"
-				/>
-				<VirtualizedList.Content
-					label="Name"
-					dataKey="name"
-				/>
-				<VirtualizedList.Content
-					label=""
-					dataKey="description"
-				/>
-			</ListTable>
+			<ListTable collection={collection} height={600} id={'my-list'} width={1024}>
+				<VirtualizedList.Content label="Id" dataKey="id" />
+				<VirtualizedList.Content label="Name" dataKey="name" />
+				<VirtualizedList.Content label="" dataKey="description" />
+			</ListTable>,
 		);
 
 		// then
@@ -48,19 +34,10 @@ describe('ListGrid', () => {
 				sortDirection={'DESC'}
 				width={1024}
 			>
-				<VirtualizedList.Content
-					label="Id"
-					dataKey="id"
-				/>
-				<VirtualizedList.Content
-					label="Name"
-					dataKey="name"
-				/>
-				<VirtualizedList.Content
-					label=""
-					dataKey="description"
-				/>
-			</ListTable>
+				<VirtualizedList.Content label="Id" dataKey="id" />
+				<VirtualizedList.Content label="Name" dataKey="name" />
+				<VirtualizedList.Content label="" dataKey="description" />
+			</ListTable>,
 		);
 
 		// then
@@ -80,15 +57,9 @@ describe('ListGrid', () => {
 				selectionToggle={jest.fn()}
 				width={1024}
 			>
-				<VirtualizedList.Content
-					label="Id"
-					dataKey="id"
-				/>
-				<VirtualizedList.Content
-					label="Name"
-					dataKey="name"
-				/>
-			</ListTable>
+				<VirtualizedList.Content label="Id" dataKey="id" />
+				<VirtualizedList.Content label="Name" dataKey="name" />
+			</ListTable>,
 		);
 
 		// then
@@ -106,15 +77,9 @@ describe('ListGrid', () => {
 				selectionToggle={jest.fn()}
 				width={1024}
 			>
-				<VirtualizedList.Content
-					label="Id"
-					dataKey="id"
-				/>
-				<VirtualizedList.Content
-					label="Name"
-					dataKey="name"
-				/>
-			</ListTable>
+				<VirtualizedList.Content label="Id" dataKey="id" />
+				<VirtualizedList.Content label="Name" dataKey="name" />
+			</ListTable>,
 		);
 
 		// then

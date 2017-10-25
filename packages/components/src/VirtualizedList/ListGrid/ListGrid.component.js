@@ -19,6 +19,7 @@ function ListGrid(props) {
 		isActive,
 		isSelected,
 		onRowClick,
+		onRowDoubleClick,
 		rowHeight,
 		rowRenderer,
 		width,
@@ -26,14 +27,11 @@ function ListGrid(props) {
 
 	let enhancedRowRenderer = rowRenderer;
 	if (isActive || isSelected) {
-		enhancedRowRenderer = getRowSelectionRenderer(
-			rowRenderer,
-			{
-				isActive,
-				isSelected,
-				getRowData: ({ index }) => collection[index],
-			}
-		);
+		enhancedRowRenderer = getRowSelectionRenderer(rowRenderer, {
+			isActive,
+			isSelected,
+			getRowData: ({ index }) => collection[index],
+		});
 	}
 
 	return (
@@ -44,6 +42,7 @@ function ListGrid(props) {
 			height={height}
 			overscanRowCount={10}
 			onRowClick={onRowClick}
+			onRowDoubleClick={onRowDoubleClick}
 			noRowsRenderer={NoRows}
 			rowCount={collection.length}
 			rowHeight={rowHeight}
@@ -56,7 +55,6 @@ function ListGrid(props) {
 	);
 }
 
-
 ListGrid.displayName = 'VirtualizedList(ListGrid)';
 ListGrid.propTypes = {
 	children: PropTypes.arrayOf(PropTypes.element),
@@ -66,11 +64,11 @@ ListGrid.propTypes = {
 	isActive: PropTypes.func,
 	isSelected: PropTypes.func,
 	onRowClick: PropTypes.func,
+	onRowDoubleClick: PropTypes.func,
 	rowHeight: PropTypes.number,
 	rowRenderer: PropTypes.func,
 	width: PropTypes.number,
 };
-
 
 ListGrid.defaultProps = {
 	rowHeight: 135,

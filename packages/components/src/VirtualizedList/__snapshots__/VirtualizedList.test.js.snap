@@ -33,6 +33,7 @@ exports[`VirtualizedList should render RendererSelector 1`] = `
   isActive={[Function]}
   isSelected={[Function]}
   onRowClick={[Function]}
+  onRowDoubleClick={undefined}
   rowHeight={50}
   selectionToggle={[Function]}
   sort={[Function]}

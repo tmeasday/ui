@@ -5,6 +5,9 @@ import RowLarge from './RowLarge.component';
 import VirtualizedList from '../VirtualizedList.component';
 import CellTitle from '../CellTitle';
 
+const onRowDoubleClick = jest.fn();
+const onRowClick = jest.fn();
+
 const titleProps = {
 	actionsKey: 'titleActions',
 	displayModeKey: 'display',
@@ -44,14 +47,10 @@ const parent = {
 		id: 'my-list',
 		collection,
 		rowGetter: index => collection[index],
+		onRowClick,
+		onRowDoubleClick,
 		children: [
-			<VirtualizedList.Content
-				label="Id"
-				dataKey="id"
-				width={50}
-				flexShrink={0}
-				flexGrow={0}
-			/>,
+			<VirtualizedList.Content label="Id" dataKey="id" width={50} flexShrink={0} flexGrow={0} />,
 			<VirtualizedList.Content
 				label="Name"
 				dataKey="name"
@@ -82,10 +81,32 @@ describe('RowLarge', () => {
 				key={18}
 				parent={parent}
 				style={{ background: 'red' }}
-			/>
+			/>,
 		);
 
 		// then
 		expect(wrapper.node).toMatchSnapshot();
+	});
+
+	it('should trigger an event when user click on a row or double click', () => {
+		// when
+		const wrapper = shallow(
+			<RowLarge
+				className={'my-class-names'}
+				index={1}
+				key={18}
+				parent={parent}
+				onRowClick={onRowClick}
+				onRowDoubleClick={onRowDoubleClick}
+				style={{ background: 'red' }}
+			/>,
+		);
+
+		wrapper.find('.tc-list-large').simulate('click');
+		wrapper.find('.tc-list-large').simulate('doubleclick');
+
+		// then
+		expect(onRowClick.mock.calls[0][1]).toEqual(collection[1]);
+		expect(onRowDoubleClick.mock.calls[0][1]).toEqual(collection[1]);
 	});
 });
